@@ -39,10 +39,11 @@ NODE_PATH="nodeePath\node_global\node_modules"
 
 在 Path 中添加 %NODE_HOME%;%NODE_PREFIX%
 
-2. 安装版 msi
-   安装可能会默认把 NODE_HOME 变量加入 Path 中 其他不变
+2.安装版 msi
 
-#### 查看版本信息（使用安装版 || 或 解压版配置好系统变量后使用） ( Nodejs 自带 npm 包管理器)
+安装可能会默认把 NODE_HOME 变量加入 Path 中 其他不变
+
+### 查看版本信息（使用安装版 || 或 解压版配置好系统变量后使用） ( Nodejs 自带 npm 包管理器)
 
 ```cmd
  node -v
