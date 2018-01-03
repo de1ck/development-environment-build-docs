@@ -24,7 +24,7 @@ id_rsa 是私钥
 id_rsa.pub 是公钥
 ```
 
-## <span id="import-key"></span>将客户端公钥导入服务器端 /home/git/.ssh/authorized_keys 文件
+## <a name="import-key" />将客户端公钥导入服务器端 /home/git/.ssh/authorized_keys 文件
 
 ```shell
 ssh git@[IP] 'cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub （或者 ~/.ssh/[name].pub）
