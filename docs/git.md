@@ -1,6 +1,6 @@
 # 提供项：
 
-## git 服务器 [IP]（[IP]）、仓库名（[reponame]） 、Email（[yourEmail]）
+## git 服务器 IP（[IP]）、仓库名（[reponame]） 、Email（[yourEmail]）、用户名([yourName])
 
 ## 安装 [Git](https://git-scm.com/)
 
@@ -9,7 +9,7 @@
 git --version
 ```
 
-ps1: 以下命令请在 git bash 终端中使用 (鼠标邮件进入)
+ps1: 以下命令请在 git bash 终端中使用 (鼠标右键进入)
 
 ## [初次运行 Git 前的配置](https://git-scm.com/book/zh/v1/起步-初次运行-Git-前的配置)
 
@@ -28,9 +28,8 @@ vi ~/.gitconfig
 ## 客户端创建 SSH 公钥和私钥 (git bash 终端)
 
 ```shell
-在git bash 里面运行以下命令
+# 在git bash 里面运行以下命令
 ssh-keygen -t rsa -C "[yourEmail]" （全部 enter 通过）
-
 # 此时 C:\Users\用户名\.ssh 下会多出两个文件 id_rsa 和 id_rsa.pub
 id_rsa 是私钥
 id_rsa.pub 是公钥
@@ -64,7 +63,7 @@ git clone git@[IP]:/home/gitrepo/[reponame].git
 # 开始愉快地使用 git 命令了
 ```
 
-## 多 git 服务器密钥管理 [name]
+## 多 git 服务器密钥管理
 
 1 生成 ssh 公钥 私钥
 
