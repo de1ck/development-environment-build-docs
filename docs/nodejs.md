@@ -19,8 +19,8 @@
 ```shell
 npm config set prefix "nodePath\node_global"
 npm config set cache "nodeePath\node_cache"
-
-npm config list 查看效果
+#查看效果
+npm config list
 ```
 
 ### 环境变量配置

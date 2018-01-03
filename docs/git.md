@@ -72,3 +72,5 @@ identityfile  C:/Users/Administrator/.ssh/[name]
 ```
 
 ### 然后 将客户端公钥导入服务器端 /home/git/.ssh/authorized_keys 文件 注意修改 ~/ssh 后面的文件 [点击跳转](#import-key)
+
+## 参考链接： https://www.cnblogs.com/dee0912/p/5815267.html
