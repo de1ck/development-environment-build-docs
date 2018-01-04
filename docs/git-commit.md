@@ -116,7 +116,54 @@ INVALID COMMIT MSG: does not match "<type>(<scope>): <subject>" ! was: edit mark
 
 每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。
 
-conventional-changelog 就是生成 Change log 的工具，运行下面的命令即可。
+这里我提供 2 种方案生成 Change log 的工具可供选择
+
+1 [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
+
+2 进入 [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) 链接发现官方提供了更新的发布工具 更好的选择是 [standard-version](https://github.com/conventional-changelog/standard-version)
+
+### standard-version
+
+使用 conventional-changelog 会自动添加新的本地 git tag 和 改变 npm version 更多说明请到链接处查找
+
+```bash
+npm i --save-dev standard-version
+
+# Add an npm run script to your package.json:
+{
+  "scripts": {
+    "release": "standard-version"
+  }
+}
+
+#Install globally (add to your PATH):、
+npm i -g standard-version
+
+#  First Release
+# npm run script
+npm run release -- --first-release
+# or global bin
+standard-version --first-release
+
+# new release
+# npm run script
+npm run release
+# or global bin
+standard-version
+
+Simply add the following to your package.json to configure lifecycle scripts:
+{
+  "standard-version": {
+    "scripts": {
+      "prebump": "echo 9.9.9"
+    }
+  }
+}
+```
+
+### conventional-changelog
+
+conventional-changelog 会生成一个 CHANGELOG.md 文件
 
 ```bash
 $ npm install -g conventional-changelog-cli
