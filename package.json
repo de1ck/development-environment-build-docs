@@ -1,6 +1,6 @@
 {
   "name": "development-environment-build-docs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "development docs",
   "main": "index.js",
   "repository": "git@github.com:de1ck/development-environment-build-docs.git",
@@ -8,12 +8,13 @@
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
-    "version":
-      "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "release": "standard-version"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0",
     "ghooks": "^2.0.2",
+    "standard-version": "^4.3.0",
     "validate-commit-msg": "^2.14.0"
   },
   "config": {
@@ -39,7 +40,9 @@
       ],
       "scope": {
         "required": false,
-        "allowed": ["*"],
+        "allowed": [
+          "*"
+        ],
         "validate": false,
         "multiple": false
       },
