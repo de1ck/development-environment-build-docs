@@ -72,4 +72,80 @@ Body 部分的格式是固定的，必须写成 This reverts commit &lt;hash>.�
 
 ## Commitizen
 
-[git 提交信息指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+Commitizen 是一个撰写合格 Commit message 的工具。
+
+```bash
+# 安装命令如下。
+npm install -g commitizen
+
+# 然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式
+commitizen init cz-conventional-changelog --save --save-exact
+# 以后，凡是用到git commit命令，一律改为使用git cz。这时，就会出现选项，用来生成符合格式的 Commit message。
+```
+
+## validate-commit-msg
+
+validate-commit-msg 用于检查 Node 项目的 Commit message 是否符合格式。
+
+```bash
+# 安装 ghooks validate-commit-msg
+npm install ghooks validate-commit-msg --save-dev
+# package.json里面使用 ghooks，把这个脚本加为commit-msg时运行。 https://www.npmjs.com/package/ghooks
+"config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  }
+# 然后，每次git commit的时候，这个脚本就会自动检查 Commit message 是否合格。如果不合格，就会报错
+$ git add -A
+$ git commit -m "edit markdown"
+INVALID COMMIT MSG: does not match "<type>(<scope>): <subject>" ! was: edit markdown
+
+# 在 vscode 中可以使用 Commitizen 扩展来提交commit信息  https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen
+```
+
+## 生成 Change log
+
+如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成
+
+生成的文档包括以下三个部分。
+
+* New features
+* Bug fixes
+* Breaking changes.
+
+每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。
+
+conventional-changelog 就是生成 Change log 的工具，运行下面的命令即可。
+
+```bash
+$ npm install -g conventional-changelog-cli
+$ cd my-project
+$ conventional-changelog -p angular -i CHANGELOG.md -w
+```
+
+上面命令不会覆盖以前的 Change log，只会在 CHANGELOG.md 的头部加上自从上次发布以来的变动。如果你想生成所有发布的 Change log，要改为运行下面的命令。
+
+```bash
+$ conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md
+```
+
+为了方便使用，可以将其写入 package.json 的 scripts 字段。
+
+```bash
+{
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0 && git add CHANGELOG.md"
+  }
+}
+```
+
+以后，直接运行下面的命令即可。
+
+```bash
+$ npm run changelog
+```
+
+### 参考链接
+
+> [git 提交信息指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)

@@ -14,6 +14,8 @@ Git Lens ：强大的 Git 功能 具体使用查看扩展介绍
 
 Git History ： 查看 Git 日志
 
+Visual Studio Code Commitizen Support : commitizen git 提交规范工具
+
 ## vue
 
 Vetur ： Vue 官方扩展

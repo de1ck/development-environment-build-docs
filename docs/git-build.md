@@ -140,14 +140,14 @@ git init --bare [reponame].git
 chown -R git:git [reponame].git
 ```
 
-## 参考链接：
-
-[git 官网](https://git-scm.com/)
-
-[搭建 Git 服务器](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
-
-[在 Linux 下搭建 Git 服务器](https://www.cnblogs.com/dee0912/p/5815267.html)
-
-[git bash 使用 ssh 多服务器 公钥/私钥登陆 centos](http://blog.csdn.net/wql19881207/article/details/37387879)
-
-[CentOS 配置 SSH 免密码登录后,仍提示输入密码](http://www.linuxidc.com/Linux/2014-10/107762.htm)
+> ## 参考链接：
+>
+> [git 官网](https://git-scm.com/)
+>
+> [搭建 Git 服务器](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017>b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
+>
+> [在 Linux 下搭建 Git 服务器](https://www.cnblogs.com/dee0912/p/5815267.html)
+>
+> [git bash 使用 ssh 多服务器 公钥/私钥登陆 centos](http://blog.csdn.net/wql19881207/article/details/37387879)
+>
+> [CentOS 配置 SSH 免密码登录后,仍提示输入密码](http://www.linuxidc.com/Linux/2014-10/107762.htm)
