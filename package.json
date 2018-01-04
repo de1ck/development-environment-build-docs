@@ -1,6 +1,6 @@
 {
   "name": "development-environment-build-docs",
-  "version": "1.0.1",
+  "version": "0.0.2",
   "description": "development docs",
   "main": "index.js",
   "repository": "git@github.com:de1ck/development-environment-build-docs.git",
