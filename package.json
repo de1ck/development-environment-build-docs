@@ -1,6 +1,6 @@
 {
   "name": "development-environment-build-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "development docs",
   "main": "index.js",
   "repository": "git@github.com:de1ck/development-environment-build-docs.git",
@@ -20,6 +20,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    },
+    "standard-version": {
+      "scripts": {
+        "prebump": "echo 0.0.1"
+      }
     },
     "ghooks": {
       "commit-msg": "validate-commit-msg"
