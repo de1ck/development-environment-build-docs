@@ -2,7 +2,41 @@
 
 ## git 服务器 IP（[IP]）、仓库名（[reponame]） 、Email（[yourEmail]）、用户名([yourName])
 
-## 安装 [Git](https://git-scm.com/)
+## [搭建 Git 服务器](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
+
+```bash
+# 第一步 安装git
+apt-get install git
+
+# 第二步 创建一个git用户，用来运行git服务
+adduser git
+```
+
+### 第三步 [客户端创建证书登录](#客户端创建证书登录)
+
+### 收集所有需要登录的用户的公钥，就是他们自己的 id_rsa.pub 文件，把所有公钥导入到/home/git/.ssh/authorized_keys 文件里，一行一个
+
+```bash
+# 第四步，初始化Git仓库：
+# 先选定一个目录作为Git仓库，假定是/srv/sample.git，在/srv目录下输入命令：
+git init --bare sample.git
+
+# 把owner改为git
+chown -R git:git sample.git
+
+# 第五步，禁用shell登录：
+vi /etc/passwd
+
+# 找到类似下面的一行：
+git:x:1001:1001:,,,:/home/git:/bin/bash
+#改为：
+git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
+
+# 第六步，客户端克隆远程仓库：
+git clone git@server:/srv/sample.git
+```
+
+## 安装客户端 [Git](https://git-scm.com/)
 
 ```shell
 # 查看 Git 版本信息
@@ -25,7 +59,7 @@ git config --global --list
 vi ~/.gitconfig
 ```
 
-## 客户端创建 SSH 公钥和私钥 (git bash 终端)
+## 客户端创建证书登录
 
 ```shell
 # 在git bash 里面运行以下命令
@@ -109,6 +143,8 @@ chown -R git:git [reponame].git
 ## 参考链接：
 
 [git 官网](https://git-scm.com/)
+
+[搭建 Git 服务器](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
 
 [在 Linux 下搭建 Git 服务器](https://www.cnblogs.com/dee0912/p/5815267.html)
 
