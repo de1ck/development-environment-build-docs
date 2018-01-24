@@ -25,9 +25,12 @@ type 用于说明 commit 的类别，只允许使用下面 7 个标识。
 * feat：新功能（feature）
 * fix：修补 bug
 * docs：文档（documentation）
-* style： 格式（不影响代码运行的变动）
+* style： 格式（不影响代码运行的变动）(空格，格式化，缺少分号等)
 * refactor：重构（即不是新增功能，也不是修改 bug 的代码变动）
+* perf: 改变代码，提高性能(performance)
 * test：增加测试
+* build: 影响构建系统或外部依赖项的更改(webpack,gulp,broccoli,npm)
+* ci: 改变 CI 配置文件或者脚本（Travis,Circle,BrowserStack,SauceLabs）
 * chore：构建过程或辅助工具的变动
 
 **（2）scope**
